@@ -23,7 +23,14 @@ Skrip ini bertujuan untuk mengidentifikasi pelanggan bernilai tinggi dan mereka 
 
 ---
 
-## 🚀 Cara Penggunaan
-1. Pastikan server PostgreSQL sedang berjalan dan skema `toko_buku` sudah memiliki data.
-2. Sesuaikan *connection string* pada variabel `engine` di setiap file dengan kredensial database lokal Anda (jangan unggah password Anda ke GitHub).
-3. Jalankan skrip `.py` atau sel di `.ipynb` untuk melihat tabel hasil dan pop-up visualisasi.
+## 🚀 Cara Menjalankan Proyek Ini di Komputer Anda (Reproducibility)
+Agar skrip Python dapat berjalan dengan baik, Anda perlu menyiapkan database lokal Anda terlebih dahulu:
+
+1. Instal PostgreSQL di komputer Anda.
+2. Buat sebuah database baru (misalnya dengan nama `ilham.afuw` atau nama lain, lalu sesuaikan di skrip Python).
+3. Jalankan file `setup_toko_buku.sql` yang ada di repositori ini ke dalam database Anda. File ini akan secara otomatis:
+   - Membuat skema `toko_buku`.
+   - Membuat tabel `buku`, `pelanggan`, dan `pesanan`.
+   - Mengisi tabel tersebut dengan data *dummy* agar analisis bisa berjalan.
+4. Sesuaikan *connection string* (`postgresql://username:password@localhost:5432/nama_db`) pada variabel `engine` di file Python dengan kredensial database lokal Anda.
+5. Jalankan skrip `.py` atau sel di `.ipynb` untuk melihat tabel hasil dan pop-up visualisasi.
