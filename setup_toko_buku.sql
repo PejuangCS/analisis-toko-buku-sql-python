@@ -133,7 +133,6 @@ DECLARE
     v_stok_akhir INTEGER;
 BEGIN
     -- 1. Hitung total stok MASUK untuk buku ini
-    -- COALESCE digunakan untuk mengubah nilai NULL (jika belum ada data) menjadi 0
     SELECT COALESCE(SUM(jumlah), 0) INTO v_stok_masuk
     FROM stok_inventaris
     WHERE id_buku = NEW.id_buku AND jenis_pergerakan = 'MASUK';
